@@ -25,6 +25,8 @@ public class PollService extends IntentService {
     public static final String ACTION_SHOW_NOTIFICATION =
             "com.star.photogallery.SHOW_NOTIFICATION";
 
+    public static final String PERM_PRIVATE = "com.star.photogallery.PRIVATE";
+
     public static Intent newIntent(Context context) {
         return new Intent(context, PollService.class);
     }
@@ -106,7 +108,7 @@ public class PollService extends IntentService {
                     NotificationManagerCompat.from(this);
             notificationManagerCompat.notify(0, notification);
 
-            sendBroadcast(new Intent(ACTION_SHOW_NOTIFICATION));
+            sendBroadcast(new Intent(ACTION_SHOW_NOTIFICATION), PERM_PRIVATE);
         }
 
         QueryPreferences.setLastResultId(this, resultId);
