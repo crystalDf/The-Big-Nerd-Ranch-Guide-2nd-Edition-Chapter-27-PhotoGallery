@@ -24,4 +24,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile files('libs/gson-2.7.jar')
+    compile files('libs/picasso-2.5.2.jar')
 }
