@@ -42,7 +42,7 @@ public class PollJobService extends JobService {
         return true;
     }
 
-    public static void setServiceScheduled(Context context, boolean isOn) {
+    public static void setServiceSchedule(Context context, boolean isOn) {
         JobScheduler jobScheduler = (JobScheduler)
                 context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
 
@@ -62,7 +62,7 @@ public class PollJobService extends JobService {
         QueryPreferences.setServiceOn(context, isOn);
     }
 
-    public static boolean isServiceScheduledOn(Context context) {
+    public static boolean isServiceScheduleOn(Context context) {
         JobScheduler jobScheduler = (JobScheduler)
                 context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
 
