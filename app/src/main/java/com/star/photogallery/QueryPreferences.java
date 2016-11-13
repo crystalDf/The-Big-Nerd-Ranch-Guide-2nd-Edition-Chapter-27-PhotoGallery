@@ -1,9 +1,7 @@
 package com.star.photogallery;
 
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.os.Build;
 import android.preference.PreferenceManager;
 
 public class QueryPreferences {
@@ -41,7 +39,6 @@ public class QueryPreferences {
                 .getBoolean(PREF_IS_SERVICE_ON, false);
     }
 
-    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     public static void setServiceOn(Context context, boolean isOn) {
         PreferenceManager.getDefaultSharedPreferences(context)
                 .edit()
