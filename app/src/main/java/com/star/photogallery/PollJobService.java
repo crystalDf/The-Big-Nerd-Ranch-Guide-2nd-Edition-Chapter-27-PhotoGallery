@@ -43,6 +43,9 @@ public class PollJobService extends JobService {
     }
 
     public static void setServiceSchedule(Context context, boolean isOn) {
+
+        Log.i(TAG, "start service schedule");
+
         JobScheduler jobScheduler = (JobScheduler)
                 context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
 

@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
+import android.util.Log;
 
 public class PollIntentService extends IntentService {
 
@@ -23,6 +24,9 @@ public class PollIntentService extends IntentService {
     }
 
     public static void setServiceAlarm(Context context, boolean isOn) {
+
+        Log.i(TAG, "start service alarm");
+
         Intent intent = PollIntentService.newIntent(context);
 
         PendingIntent pendingIntent = PendingIntent.getService(context, 0, intent, 0);

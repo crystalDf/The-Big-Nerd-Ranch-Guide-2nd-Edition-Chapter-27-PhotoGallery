@@ -22,8 +22,10 @@ public class PollServiceUtils {
 
     public static final String PERM_PRIVATE = "com.star.photogallery.PRIVATE";
 
-    public static final String REQUEST_CODE = "REQUEST_CODE";
-    public static final String NOTIFICATION = "NOTIFICATION";
+    public static final String REQUEST_CODE_KEY = "REQUEST_CODE_KEY";
+    private static final int REQUEST_CODE_VALUE = 0;
+
+    public static final String NOTIFICATION_KEY = "NOTIFICATION";
 
     public static void pollFlickr(Context context) {
 
@@ -68,7 +70,7 @@ public class PollServiceUtils {
                     .setAutoCancel(true)
                     .build();
 
-            showBackgroundNotification(context, 0, notification);
+            showBackgroundNotification(context, REQUEST_CODE_VALUE, notification);
         }
 
         QueryPreferences.setLastResultId(context, resultId);
@@ -77,8 +79,8 @@ public class PollServiceUtils {
     private static void showBackgroundNotification(Context context,
                                             int requestCode, Notification notification) {
         Intent intent = new Intent(ACTION_SHOW_NOTIFICATION);
-        intent.putExtra(REQUEST_CODE, requestCode);
-        intent.putExtra(NOTIFICATION, notification);
+        intent.putExtra(REQUEST_CODE_KEY, requestCode);
+        intent.putExtra(NOTIFICATION_KEY, notification);
         context.sendOrderedBroadcast(intent, PERM_PRIVATE, null, null, Activity.RESULT_OK, null, null);
     }
 
